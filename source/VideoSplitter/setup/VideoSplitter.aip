@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT type="Advanced Installer" CreateVersion="7.2.1" version="7.2.1" modules="java" RootPath="." Language="en">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_MINJREVERSION" MultiBuildValue="DefaultBuild:1.6" ValueLocId="-"/>
+    <ROW Property="ALLUSERS" Value="2"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="BannerBitmap" MultiBuildValue="DefaultBuild:banner_image.jpg" Type="1"/>
+    <ROW Property="DialogBitmap" MultiBuildValue="DefaultBuild:dialog_image.jpg" Type="1"/>
+    <ROW Property="Manufacturer" Value="Ted Hive" ValueLocId="*"/>
+    <ROW Property="ProductCode" Value="1033:{157AE8CC-1F30-48D0-8333-D2BB75DA7F63} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Video Splitter" ValueLocId="*"/>
+    <ROW Property="ProductVersion" Value="1.0.0"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{592B93C2-C053-44D1-82F7-7A3B2003A76F}"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="Deskto~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="VideoSplitter_DIR" Directory_Parent="APPDIR" DefaultDir="bin"/>
+    <ROW Directory="atom_DIR" Directory_Parent="mpeg_DIR" DefaultDir="atom"/>
+    <ROW Directory="cfg_DIR" Directory_Parent="APPDIR" DefaultDir="cfg"/>
+    <ROW Directory="com_DIR" Directory_Parent="VideoSplitter_DIR" DefaultDir="com"/>
+    <ROW Directory="googlecode_DIR" Directory_Parent="com_DIR" DefaultDir="google~1|googlecode"/>
+    <ROW Directory="images_DIR" Directory_Parent="resource_DIR" DefaultDir="images"/>
+    <ROW Directory="log_DIR" Directory_Parent="APPDIR" DefaultDir="log"/>
+    <ROW Directory="mpeg_DIR" Directory_Parent="videosplitter_DIR" DefaultDir="mpeg"/>
+    <ROW Directory="resource_DIR" Directory_Parent="videosplitter_DIR" DefaultDir="resource"/>
+    <ROW Directory="videosplitter_DIR" Directory_Parent="googlecode_DIR" DefaultDir="videos~1|videosplitter"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_ExePath" ComponentId="{A7B78C49-5CF8-4CF2-BBC9-B5ACF4DE320D}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="Atom.class" ComponentId="{D7D02BA4-443E-44CE-9A4C-3A06F4D024F2}" Directory_="atom_DIR" Attributes="0" KeyPath="Atom.class" Type="0"/>
+    <ROW Component="Config.class" ComponentId="{7E974880-EB21-4598-9945-63FE200B14EE}" Directory_="videosplitter_DIR" Attributes="0" KeyPath="Config.class" Type="0"/>
+    <ROW Component="Mp4Dump.class" ComponentId="{0F113501-E994-4BEB-8612-2C7EC1AEBA89}" Directory_="mpeg_DIR" Attributes="0" KeyPath="Mp4Dump.class" Type="0"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{5E268F0A-295B-468C-80FA-8927F65A09C4}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="Splitter.exe" ComponentId="{AC676194-124F-49DA-ADCB-308AB1EFD7B5}" Directory_="APPDIR" Attributes="0" KeyPath="Splitter.exe"/>
+    <ROW Component="config.properties" ComponentId="{CD547E1F-7D8C-4C6F-B9BF-6931EB81D22A}" Directory_="cfg_DIR" Attributes="0" KeyPath="config.properties" Type="0"/>
+    <ROW Component="icon_16x16.png" ComponentId="{2346010C-C843-4AE5-A52C-BC3CCD565163}" Directory_="images_DIR" Attributes="0" KeyPath="icon_16x16.png" Type="0"/>
+    <ROW Component="log" ComponentId="{E21D6888-D013-4BEA-A3C3-69340A0C165D}" Directory_="log_DIR" Attributes="0"/>
+    <ROW Component="log4j_1.2.17.jar" ComponentId="{32EF7FE2-5D7D-4A9C-B0D7-E4FDCA88B1CD}" Directory_="VideoSplitter_DIR" Attributes="0" KeyPath="log4j_1.2.17.jar" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="Splitter.exe Config.class Atom.class Mp4Dump.class icon_16x16.png log4j_1.2.17.jar config.properties log SHORTCUTDIR AI_ExePath"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Atom.class" Component_="Atom.class" FileName="Atom~1.cla|Atom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\Atom.class" SelfReg="false" Sequence="5"/>
+    <ROW File="AtomError.class" Component_="Atom.class" FileName="AtomEr~1.cla|AtomError.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\AtomError.class" SelfReg="false" Sequence="6"/>
+    <ROW File="AtomException.class" Component_="Atom.class" FileName="AtomEx~1.cla|AtomException.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\AtomException.class" SelfReg="false" Sequence="7"/>
+    <ROW File="AtomVisitor.class" Component_="Atom.class" FileName="AtomVi~1.cla|AtomVisitor.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\AtomVisitor.class" SelfReg="false" Sequence="8"/>
+    <ROW File="ByteStream.class" Component_="Atom.class" FileName="ByteSt~1.cla|ByteStream.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\ByteStream.class" SelfReg="false" Sequence="9"/>
+    <ROW File="CdscAtom.class" Component_="Atom.class" FileName="CdscAt~1.cla|CdscAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\CdscAtom.class" SelfReg="false" Sequence="10"/>
+    <ROW File="ChapAtom.class" Component_="Atom.class" FileName="ChapAt~1.cla|ChapAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\ChapAtom.class" SelfReg="false" Sequence="11"/>
+    <ROW File="Co64Atom.class" Component_="Atom.class" FileName="Co64At~1.cla|Co64Atom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\Co64Atom.class" SelfReg="false" Sequence="12"/>
+    <ROW File="Config.class" Component_="Config.class" FileName="Config~1.cla|Config.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Config.class" SelfReg="false" Sequence="2"/>
+    <ROW File="ContainerAtom.class" Component_="Atom.class" FileName="Contai~1.cla|ContainerAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\ContainerAtom.class" SelfReg="false" Sequence="13"/>
+    <ROW File="Crypto.class" Component_="Config.class" FileName="Crypto~1.cla|Crypto.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Crypto.class" SelfReg="false" Sequence="3"/>
+    <ROW File="CttsAtom.class" Component_="Atom.class" FileName="CttsAt~1.cla|CttsAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\CttsAtom.class" SelfReg="false" Sequence="14"/>
+    <ROW File="DefaultAtomVisitor.class" Component_="Atom.class" FileName="Defaul~1.cla|DefaultAtomVisitor.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\DefaultAtomVisitor.class" SelfReg="false" Sequence="15"/>
+    <ROW File="DinfAtom.class" Component_="Atom.class" FileName="DinfAt~1.cla|DinfAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\DinfAtom.class" SelfReg="false" Sequence="16"/>
+    <ROW File="DrefAtom.class" Component_="Atom.class" FileName="DrefAt~1.cla|DrefAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\DrefAtom.class" SelfReg="false" Sequence="17"/>
+    <ROW File="EdtsAtom.class" Component_="Atom.class" FileName="EdtsAt~1.cla|EdtsAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\EdtsAtom.class" SelfReg="false" Sequence="18"/>
+    <ROW File="ElstAtom.class" Component_="Atom.class" FileName="ElstAt~1.cla|ElstAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\ElstAtom.class" SelfReg="false" Sequence="19"/>
+    <ROW File="FreeAtom.class" Component_="Atom.class" FileName="FreeAt~1.cla|FreeAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\FreeAtom.class" SelfReg="false" Sequence="20"/>
+    <ROW File="FtypAtom.class" Component_="Atom.class" FileName="FtypAt~1.cla|FtypAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\FtypAtom.class" SelfReg="false" Sequence="21"/>
+    <ROW File="GmhdAtom.class" Component_="Atom.class" FileName="GmhdAt~1.cla|GmhdAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\GmhdAtom.class" SelfReg="false" Sequence="22"/>
+    <ROW File="HdlrAtom.class" Component_="Atom.class" FileName="HdlrAt~1.cla|HdlrAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\HdlrAtom.class" SelfReg="false" Sequence="23"/>
+    <ROW File="HintAtom.class" Component_="Atom.class" FileName="HintAt~1.cla|HintAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\HintAtom.class" SelfReg="false" Sequence="24"/>
+    <ROW File="IMhdAtom.class" Component_="Atom.class" FileName="IMhdAt~1.cla|IMhdAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\IMhdAtom.class" SelfReg="false" Sequence="25"/>
+    <ROW File="ITrefTypeAtom.class" Component_="Atom.class" FileName="ITrefT~1.cla|ITrefTypeAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\ITrefTypeAtom.class" SelfReg="false" Sequence="27"/>
+    <ROW File="Images.class" Component_="Config.class" FileName="Images~1.cla|Images.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Images.class" SelfReg="false" Sequence="4"/>
+    <ROW File="IodsAtom.class" Component_="Atom.class" FileName="IodsAt~1.cla|IodsAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\IodsAtom.class" SelfReg="false" Sequence="26"/>
+    <ROW File="LeafAtom.class" Component_="Atom.class" FileName="LeafAt~1.cla|LeafAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\LeafAtom.class" SelfReg="false" Sequence="28"/>
+    <ROW File="MdatAtom.class" Component_="Atom.class" FileName="MdatAt~1.cla|MdatAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\MdatAtom.class" SelfReg="false" Sequence="29"/>
+    <ROW File="MdhdAtom.class" Component_="Atom.class" FileName="MdhdAt~1.cla|MdhdAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\MdhdAtom.class" SelfReg="false" Sequence="30"/>
+    <ROW File="MdiaAtom.class" Component_="Atom.class" FileName="MdiaAt~1.cla|MdiaAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\MdiaAtom.class" SelfReg="false" Sequence="31"/>
+    <ROW File="MinfAtom.class" Component_="Atom.class" FileName="MinfAt~1.cla|MinfAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\MinfAtom.class" SelfReg="false" Sequence="32"/>
+    <ROW File="MoovAtom.class" Component_="Atom.class" FileName="MoovAt~1.cla|MoovAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\MoovAtom.class" SelfReg="false" Sequence="33"/>
+    <ROW File="Mp4Dump.class" Component_="Mp4Dump.class" FileName="Mp4Dum~1.cla|Mp4Dump.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\Mp4Dump.class" SelfReg="false" Sequence="49"/>
+    <ROW File="Mp4Split.class" Component_="Mp4Dump.class" FileName="Mp4Spl~1.cla|Mp4Split.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\Mp4Split.class" SelfReg="false" Sequence="50"/>
+    <ROW File="MvhdAtom.class" Component_="Atom.class" FileName="MvhdAt~1.cla|MvhdAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\MvhdAtom.class" SelfReg="false" Sequence="34"/>
+    <ROW File="Runner.class" Component_="Config.class" FileName="Runner~1.cla|Runner.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Runner.class" SelfReg="false" Sequence="53"/>
+    <ROW File="SmhdAtom.class" Component_="Atom.class" FileName="SmhdAt~1.cla|SmhdAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\SmhdAtom.class" SelfReg="false" Sequence="35"/>
+    <ROW File="Splitter.class" Component_="Config.class" FileName="Splitt~2.cla|Splitter.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Splitter.class" SelfReg="false" Sequence="55"/>
+    <ROW File="Splitter.exe" Component_="Splitter.exe" FileName="Splitter.exe" Attributes="0" SourcePath="&lt;AI_STUBS&gt;aijclw.exe" SelfReg="false" Sequence="1" DigSign="true"/>
+    <ROW File="Splitter_MPEGVisitor.class" Component_="Config.class" FileName="Splitt~1.cla|Splitter$MPEGVisitor.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Splitter$MPEGVisitor.class" SelfReg="false" Sequence="54"/>
+    <ROW File="StblAtom.class" Component_="Atom.class" FileName="StblAt~1.cla|StblAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\StblAtom.class" SelfReg="false" Sequence="36"/>
+    <ROW File="StcoAtom.class" Component_="Atom.class" FileName="StcoAt~1.cla|StcoAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\StcoAtom.class" SelfReg="false" Sequence="37"/>
+    <ROW File="StscAtom.class" Component_="Atom.class" FileName="StscAt~1.cla|StscAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\StscAtom.class" SelfReg="false" Sequence="38"/>
+    <ROW File="StsdAtom.class" Component_="Atom.class" FileName="StsdAt~1.cla|StsdAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\StsdAtom.class" SelfReg="false" Sequence="39"/>
+    <ROW File="StssAtom.class" Component_="Atom.class" FileName="StssAt~1.cla|StssAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\StssAtom.class" SelfReg="false" Sequence="40"/>
+    <ROW File="StszAtom.class" Component_="Atom.class" FileName="StszAt~1.cla|StszAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\StszAtom.class" SelfReg="false" Sequence="41"/>
+    <ROW File="SttsAtom.class" Component_="Atom.class" FileName="SttsAt~1.cla|SttsAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\SttsAtom.class" SelfReg="false" Sequence="42"/>
+    <ROW File="Thumbs.db" Component_="icon_16x16.png" FileName="Thumbs.db" Attributes="2" SourcePath="..\bin\com\googlecode\videosplitter\resource\images\Thumbs.db" SelfReg="false" Sequence="52"/>
+    <ROW File="TimeToSampleAtom.class" Component_="Atom.class" FileName="TimeTo~1.cla|TimeToSampleAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\TimeToSampleAtom.class" SelfReg="false" Sequence="43"/>
+    <ROW File="TkhdAtom.class" Component_="Atom.class" FileName="TkhdAt~1.cla|TkhdAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\TkhdAtom.class" SelfReg="false" Sequence="44"/>
+    <ROW File="Tool.class" Component_="Config.class" FileName="Tool~1.cla|Tool.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Tool.class" SelfReg="false" Sequence="56"/>
+    <ROW File="TrakAtom.class" Component_="Atom.class" FileName="TrakAt~1.cla|TrakAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\TrakAtom.class" SelfReg="false" Sequence="45"/>
+    <ROW File="TrefAtom.class" Component_="Atom.class" FileName="TrefAt~1.cla|TrefAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\TrefAtom.class" SelfReg="false" Sequence="46"/>
+    <ROW File="UdtaAtom.class" Component_="Atom.class" FileName="UdtaAt~1.cla|UdtaAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\UdtaAtom.class" SelfReg="false" Sequence="47"/>
+    <ROW File="VmhdAtom.class" Component_="Atom.class" FileName="VmhdAt~1.cla|VmhdAtom.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\mpeg\atom\VmhdAtom.class" SelfReg="false" Sequence="48"/>
+    <ROW File="Window.class" Component_="Config.class" FileName="Window~8.cla|Window.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Window.class" SelfReg="false" Sequence="64"/>
+    <ROW File="Window_1.class" Component_="Config.class" FileName="Window~1.cla|Window$1.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Window$1.class" SelfReg="false" Sequence="57"/>
+    <ROW File="Window_2.class" Component_="Config.class" FileName="Window~2.cla|Window$2.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Window$2.class" SelfReg="false" Sequence="58"/>
+    <ROW File="Window_3.class" Component_="Config.class" FileName="Window~3.cla|Window$3.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Window$3.class" SelfReg="false" Sequence="59"/>
+    <ROW File="Window_4.class" Component_="Config.class" FileName="Window~4.cla|Window$4.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Window$4.class" SelfReg="false" Sequence="60"/>
+    <ROW File="Window_MonitorDialog.class" Component_="Config.class" FileName="Window~6.cla|Window$MonitorDialog.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Window$MonitorDialog.class" SelfReg="false" Sequence="62"/>
+    <ROW File="Window_MonitorDialog_1.class" Component_="Config.class" FileName="Window~5.cla|Window$MonitorDialog$1.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Window$MonitorDialog$1.class" SelfReg="false" Sequence="61"/>
+    <ROW File="Window_SplitRunable.class" Component_="Config.class" FileName="Window~7.cla|Window$SplitRunable.class" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\Window$SplitRunable.class" SelfReg="false" Sequence="63"/>
+    <ROW File="config.properties" Component_="config.properties" FileName="config~1.pro|config.properties" Attributes="0" SourcePath="..\cfg\config.properties" SelfReg="false" Sequence="72"/>
+    <ROW File="icon_16x16.png" Component_="icon_16x16.png" FileName="icon-1~1.png|icon-16x16.png" Attributes="0" SourcePath="..\bin\com\googlecode\videosplitter\resource\images\icon-16x16.png" SelfReg="false" Sequence="51"/>
+    <ROW File="jface.jar" Component_="log4j_1.2.17.jar" FileName="jface.jar" Attributes="0" SourcePath="..\lib\swt\jface.jar" SelfReg="false" Sequence="66"/>
+    <ROW File="jfacetext.jar" Component_="log4j_1.2.17.jar" FileName="jfacet~1.jar|jfacetext.jar" Attributes="0" SourcePath="..\lib\swt\jfacetext.jar" SelfReg="false" Sequence="67"/>
+    <ROW File="log4j_1.2.17.jar" Component_="log4j_1.2.17.jar" FileName="log4j-~1.jar|log4j-1.2.17.jar" Attributes="0" SourcePath="..\lib\log4j\log4j-1.2.17.jar" SelfReg="false" Sequence="65"/>
+    <ROW File="log_conf.xml" Component_="config.properties" FileName="log-conf.xml" Attributes="0" SourcePath="..\cfg\log-conf.xml" SelfReg="false" Sequence="73"/>
+    <ROW File="osgi.jar" Component_="log4j_1.2.17.jar" FileName="osgi.jar" Attributes="0" SourcePath="..\lib\swt\osgi.jar" SelfReg="false" Sequence="68"/>
+    <ROW File="runtime.jar" Component_="log4j_1.2.17.jar" FileName="runtime.jar" Attributes="0" SourcePath="..\lib\swt\runtime.jar" SelfReg="false" Sequence="69"/>
+    <ROW File="swt_4.2.1.jar" Component_="log4j_1.2.17.jar" FileName="swt-42~1.jar|swt-4.2.1.jar" Attributes="0" SourcePath="..\lib\swt\swt-4.2.1.jar" SelfReg="false" Sequence="70"/>
+    <ROW File="text.jar" Component_="log4j_1.2.17.jar" FileName="text.jar" Attributes="0" SourcePath="..\lib\swt\text.jar" SelfReg="false" Sequence="71"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="VideoSplitter.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\install" ExeName="VideoSplitter_Installer"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_FRAGS&gt;FolderDlg.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_FRAGS&gt;UI.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="banner_image.jpg" SourcePath="&lt;AI_RES&gt;banner-image.jpg"/>
+    <ROW Name="dialog_image.jpg" SourcePath="&lt;AI_RES&gt;dialog-image.jpg"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ATTRIBUTE name="FixedSizeBitmaps" value="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="3"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="2"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="3"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="log_DIR" Component_="log"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DetectJRE" Type="1" Source="aicustact.dll" Target="RequiredJreExists"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="Splitter.exe" SourcePath="VideoSplitter.ico" Index="0"/>
+    <ROW Name="SystemFolder_msiexec.exe" SourcePath="&lt;AI_RES&gt;uninstall.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIniFileComponent">
+    <ROW IniFile="Application_Type" FileName="Splitter.ini" DirProperty="APPDIR" Section="Application" Key="Application Type" Value="gui" Action="0" Component_="Splitter.exe"/>
+    <ROW IniFile="Class_Path" FileName="Splitter.ini" DirProperty="APPDIR" Section="Class Path" Key="Class Path" Value="[VideoSplitter_DIR];[#log4j_1.2.17.jar];[#jface.jar];[#jfacetext.jar];[#osgi.jar];[#runtime.jar];[#swt_4.2.1.jar];[#text.jar];" Action="0" Component_="Splitter.exe"/>
+    <ROW IniFile="Failure_Check" FileName="Splitter.ini" DirProperty="APPDIR" Section="Application" Key="Failure Check" Value="yes" Action="0" Component_="Splitter.exe"/>
+    <ROW IniFile="Main_Class" FileName="Splitter.ini" DirProperty="APPDIR" Section="Java Runtime Environment" Key="Main Class" Value="com.googlecode.videosplitter.Runner" Action="0" Component_="Splitter.exe"/>
+    <ROW IniFile="Maximum_Version" FileName="Splitter.ini" DirProperty="APPDIR" Section="Java Runtime Environment" Key="Maximum Version" Value="any" Action="0" Component_="Splitter.exe"/>
+    <ROW IniFile="Minimum_Version" FileName="Splitter.ini" DirProperty="APPDIR" Section="Java Runtime Environment" Key="Minimum Version" Value="1.6" Action="0" Component_="Splitter.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="Not Installed" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_DetectJRE" Condition="1" Sequence="399" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_DetectJRE" Condition="1" Sequence="399" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiJavaComponent">
+    <ROW Name="Splitter.exe" Launcher="Splitter.exe" MainClass="Main_Class" ClassPath="Class_Path" JREMin="Minimum_Version" JREMax="Maximum_Version" IconPath="VideoSplitter.ico" AppType="Application_Type" PlusList="APPDIR;" MinusList="#Splitter.exe;" MacDescription="[|CurrentJavaProductName] [|ProductVersion] © [|Manufacturer], Inc, 2014" MacBundleId="com.[|Manufacturer].[|ProductName].[|CurrentJavaProductName]" FailureCheck="Failure_Check" UACExecutionLevel="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="AI_JREVERFOUND = 1" Description="[ProductName] cannot be installed on systems with JRE version smaller than [AI_MINJREVERSION]" DescriptionLocId="AI.LaunchCondition.Jre" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Splitter" Directory_="SHORTCUTDIR" Name="Splitter" Component_="Splitter.exe" Target="[#Splitter.exe]" Hotkey="0" Icon_="Splitter.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="Uninstall" Directory_="SHORTCUTDIR" Name="Uninst~1|Uninstall" Component_="Config.class" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFolder_msiexec.exe" IconIndex="0" ShowCmd="1"/>
+    <ROW Shortcut="Video_Splitter" Directory_="DesktopFolder" Name="VideoS~1|Video Splitter" Component_="Splitter.exe" Target="[#Splitter.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMax="[|ProductVersion]" Attributes="1025" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="VideoSplitter_DIR" SourcePath="..\bin"/>
+  </COMPONENT>
+</DOCUMENT>
